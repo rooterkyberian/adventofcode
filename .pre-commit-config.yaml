@@ -13,6 +13,13 @@ repos:
     hooks:
       - id: pyupgrade
         args: [--py310-plus]
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.5.3
+    hooks:
+      - id: nbqa-pyupgrade
+        args: ["--py310-plus"]
+      - id: nbqa-isort
+        args: ["--float-to-top"]
   - repo: https://github.com/ambv/black
     rev: "22.12.0"
     hooks:
@@ -22,4 +29,3 @@ repos:
     rev: "v3.0.0-alpha.4"
     hooks:
       - id: prettier
-        exclude: "templates|bootstrap|vendor"
