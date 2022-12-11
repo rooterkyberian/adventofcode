@@ -11,10 +11,10 @@ def fetch_input(year, day, session):
     if not input_path.exists():
         input_path.parent.mkdir(parents=True, exist_ok=True)
         url = f"https://adventofcode.com/{year}/day/{day}/input"
-        with input_path.open("w") as f:
-            resp = requests.get(url, cookies={"session": session})
-            resp.raise_for_status()
-            f.write(resp.text)
+        resp = requests.get(url, cookies={"session": session})
+        resp.raise_for_status()
+        with input_path.open("wb") as f:
+            f.write(resp.content)
     return input_path
 
 
