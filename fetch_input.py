@@ -1,9 +1,8 @@
 import json
 from datetime import date
+from pathlib import Path
 
 import requests
-
-from pathlib import Path
 
 
 def fetch_input(year, day, session):
