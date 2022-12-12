@@ -1,5 +1,3 @@
-from dataclasses import dataclass
-
 example1 = open("example1.txt").read().strip()
 data = open("input.txt").read().strip()
 

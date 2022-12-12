@@ -1,9 +1,4 @@
-import itertools
-import re
 from collections import defaultdict
-from pprint import pprint
-
-import numpy as np
 
 example1 = open("example1.txt").read().strip()
 data = open("input.txt").read().strip()
