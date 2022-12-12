@@ -15,7 +15,7 @@ def _task(data, cost_func):
 
 
 def task1(data):
-    return _task(data, lambda postition, target: abs(postition - target))
+    return _task(data, lambda position, target: abs(position - target))
 
 
 def task2(data):
