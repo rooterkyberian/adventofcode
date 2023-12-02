@@ -31,14 +31,14 @@ def grow_array(arr, new_shape):
 
 def calculate_overlaps(lines, all=False):
     overlaps = np.array([[]], dtype=int, order="F")
-    for ((x1, y1), (x2, y2)) in lines:
+    for (x1, y1), (x2, y2) in lines:
         max_x = max(x1, x2, overlaps.shape[1] - 1)
         max_y = max(y1, y2, overlaps.shape[0] - 1)
         overlaps = grow_array(overlaps, (max_y + 1, max_x + 1))
         if all or x1 == x2 or y1 == y2:
             counts = abs(x1 - x2), abs(y1 - y2)
             n = int(abs(counts[0] - counts[1]))
-            for (x, y) in zip(unending(x1, x2, n=n), unending(y1, y2, n=n)):
+            for x, y in zip(unending(x1, x2, n=n), unending(y1, y2, n=n)):
                 overlaps[y][x] += 1
     return (overlaps > 1).sum()
 
