@@ -26,9 +26,7 @@ shapes_data = """
 
 ##
 ##
-""".strip().split(
-    "\n\n"
-)
+""".strip().split("\n\n")
 
 
 def rocks_gen():

@@ -1,6 +1,15 @@
-[tool.isort]
-profile = "black"
-[tool.pycln]
-all = true
-expand-stars = true
-exclude= "(.eggs|.git|.mypy_cache|__pycache__|__init__.py)"
+[project]
+name = "advent-of-code-rooterkyberian"
+version = "0.0"
+requires-python = ">=3.10"
+
+[tool.ruff]
+src = ["app/src"]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501", "E402", "E741"]
+
+[tool.nbqa.exclude]
+ruff = "^2022/"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]

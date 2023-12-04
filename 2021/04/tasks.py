@@ -35,9 +35,10 @@ def winner_score(data):
         visited.add(number)
         for board in list(boards):
             if check_board(board, visited):
-                yield sum(
-                    sum(i for i in row if i not in visited) for row in board
-                ) * number
+                yield (
+                    sum(sum(i for i in row if i not in visited) for row in board)
+                    * number
+                )
                 boards.remove(board)
 
 
